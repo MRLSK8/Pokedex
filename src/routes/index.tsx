@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { RFPercentage } from "react-native-responsive-fontsize";
 import { PokemonDetails, PokemonsList } from '~/screens';
 import { GoBackButton } from '~/components';
 
@@ -23,7 +23,7 @@ const Routes: React.FC = () => {
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontFamily: 'Ubuntu-Bold',
-            fontSize: 26,
+            fontSize: RFPercentage(3),
             textShadowColor: 'rgba(160, 11, 11, 0.5)',
             textShadowOffset: { width: -0.5, height: 0.5 },
             textShadowRadius: 10,
