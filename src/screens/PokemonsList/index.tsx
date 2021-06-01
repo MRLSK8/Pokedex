@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from 'react';
 
 import { usePokemonContext } from '~/hooks/pokemonContext';
 import { ActivityIndicator } from 'react-native';
-
 import {
   SafeAreaWrapper,
   LoadingWrapper,
