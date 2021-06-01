@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import LottieView from 'lottie-react-native';
-
-import { Container } from './styles';
+import { View } from 'react-native';
+import { Container, AnimationWrapper } from './styles';
 
 interface LoadingWrapper {
   children: ReactNode;
@@ -13,7 +13,9 @@ function LoadingWrapper({ isLoading, children }: LoadingWrapper) {
 
   return (
     <Container>
-      <LottieView source={require('~/assets/LottieJsonFiles/pikachu.json')} autoPlay loop />
+      <AnimationWrapper>
+        <LottieView source={require('~/assets/LottieJsonFiles/pikachu.json')} autoPlay loop />
+      </AnimationWrapper>
     </Container>
   );
 };
