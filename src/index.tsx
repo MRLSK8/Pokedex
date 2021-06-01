@@ -4,10 +4,14 @@ import Routes from './routes';
 
 import { NavigationContainer } from '@react-navigation/native';
 
+import { PokemonContextProvider } from '~/hooks/pokemonContext';
+
 const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <Routes />
+      <PokemonContextProvider>
+        <Routes />
+      </PokemonContextProvider>
     </NavigationContainer >
   );
 };

@@ -18,9 +18,18 @@ const Routes: React.FC = () => {
       <Screen
         name="PokemonsList"
         options={{
-          title: '',
+          title: 'Pokedex',
           headerShown: true,
-          headerTransparent: true,
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontFamily: 'Ubuntu-Bold',
+            fontSize: 26,
+            textShadowColor: 'rgba(160, 11, 11, 0.5)',
+            textShadowOffset: { width: -0.5, height: 0.5 },
+            textShadowRadius: 10,
+            letterSpacing: 0.3,
+            color: '#08083c',
+          },
           headerStyle: {
             elevation: 0,
           },
