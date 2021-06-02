@@ -18,7 +18,11 @@
   <img src="----" width="200" height="400"/>
 </div>
 
-Project developed for the purpose of...
+Pokedex developed with React Native, consuming the public API: [Pokeapi](https://pokeapi.co/docs/v2).
+
+Objective:
+- Consume the endpoint https://pokeapi.co/api/v2/pokemon/ and create a screen with a list of pokemons using pagination.
+- Consume the endpoint https://pokeapi.co/api/v2/pokemon/{id or name}/ and create pokemon details screen.
 
 ## Technologies
 
