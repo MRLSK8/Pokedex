@@ -23,11 +23,22 @@ Project developed for the purpose of...
 ## Technologies
 
 :white_check_mark: React Native\
+:white_check_mark: Native Base\
 :white_check_mark: Styled-components\
-:white_check_mark: Redux\
-:white_check_mark: Redux Saga\
-:white_check_mark: Duck Patterns\
+:white_check_mark: Axios\
+:white_check_mark: React-native-linear-gradient\
+:white_check_mark: SWR\
+:white_check_mark: react-navigation\
+:white_check_mark: Context API\
+:white_check_mark: Lottie\
+:white_check_mark: Git-commit-msg-linter\
+:white_check_mark: React-native-animatable\
 :white_check_mark: React Hooks
+:white_check_mark: Babel-plugin-root-import\
+:white_check_mark: Vector Icons\
+:white_check_mark: Animated\
+:white_check_mark: Typescript\
+
 
 ## Prerequisites
 
