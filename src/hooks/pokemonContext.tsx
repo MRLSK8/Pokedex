@@ -61,7 +61,6 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     try {
       setIsLoadingMorePokemons(true);
       const response = await Api.get(`/pokemon?offset=${currentOffset}&limit=${LIMIT_OF_POKEMONS_AT_A_TIME}`);
-
       const pokemonsDataFormatted = formatPokemonData(response?.data?.results);
 
       setPokemons(prevState => [...prevState, ...pokemonsDataFormatted]);

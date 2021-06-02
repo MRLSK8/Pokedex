@@ -1,37 +1,40 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { RFPercentage } from "react-native-responsive-fontsize";
+
+import { usePokemonContext } from '~/hooks/pokemonContext';
 import { PokemonDetails, PokemonsList } from '~/screens';
 import { GoBackButton } from '~/components';
 
 const { Screen, Navigator } = createStackNavigator();
 
 const Routes: React.FC = () => {
+  const { pokemons } = usePokemonContext();
+
   return (
     <Navigator
       screenOptions={{
         headerShown: false,
-        cardStyle: { backgroundColor: '#FFFFFF' },
+        cardStyle: { backgroundColor: '#b9fdab' },
       }}
       initialRouteName={'PokemonsList'}
     >
       <Screen
         name="PokemonsList"
         options={{
-          title: 'Pokedex',
+          title: pokemons.length > 0 ? 'Pokedex' : '',
           headerShown: true,
           headerTitleAlign: 'center',
           headerTitleStyle: {
-            fontFamily: 'Ubuntu-Bold',
+            fontFamily: 'Pokemon-Font-Regular',
             fontSize: RFPercentage(3),
-            textShadowColor: 'rgba(160, 11, 11, 0.5)',
-            textShadowOffset: { width: -0.5, height: 0.5 },
-            textShadowRadius: 10,
-            letterSpacing: 0.3,
-            color: '#08083c',
+            letterSpacing: 2,
+            color: '#444',
           },
           headerStyle: {
             elevation: 0,
+            height: 80,
+            backgroundColor: '#b9fdab',
           },
         }}
         component={PokemonsList}

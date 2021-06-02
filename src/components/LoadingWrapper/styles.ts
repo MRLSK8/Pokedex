@@ -5,6 +5,7 @@ export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  background-color: #b9fdab;
 `;
 
 export const AnimationWrapper = styled(Animatable.View).attrs({

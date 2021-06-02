@@ -1,10 +1,18 @@
 import React, { memo } from 'react';
 
-import { Text } from 'react-native';
-
 import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
 
-import { Container, PokemonImage, styles } from './styles';
+import {
+  PokemonImageBackground,
+  PokemonNumber,
+  PokeballIcon,
+  PokemonImage,
+  PokemonName,
+  Container,
+  styles,
+} from './styles';
+
 import { addPadLeftToNumber } from '~/utils';
 interface PokemonItemProps {
   image: string;
@@ -24,9 +32,12 @@ const PokemonItem = ({ id, name, image }: PokemonItemProps) => {
       style={styles.shadow}
       onPress={() => handleGoToDetails(id)}
     >
-      <PokemonImage source={{ uri: image }} />
-      <Text>{name}</Text>
-      <Text>{addPadLeftToNumber(id, 4)}</Text>
+      <PokemonImageBackground style={[styles.shadow]}>
+        <PokemonImage style={styles.shadow} source={{ uri: image }} />
+      </PokemonImageBackground>
+      <PokemonName>{name}</PokemonName>
+      <PokemonNumber>{addPadLeftToNumber(id, 4)}</PokemonNumber>
+      <PokeballIcon />
     </Container>
   );
 };
