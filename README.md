@@ -28,7 +28,7 @@ Project developed for the purpose of...
 :white_check_mark: Axios\
 :white_check_mark: React-native-linear-gradient\
 :white_check_mark: SWR\
-:white_check_mark: react-navigation\
+:white_check_mark: React-navigation\
 :white_check_mark: Context API\
 :white_check_mark: Lottie\
 :white_check_mark: Git-commit-msg-linter\
