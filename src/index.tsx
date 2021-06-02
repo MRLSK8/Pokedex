@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './config/StatusBarConfig';
+import './config/statusBarConfig';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { SWRConfig } from 'swr';
