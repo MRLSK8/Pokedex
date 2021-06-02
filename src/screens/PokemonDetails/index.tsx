@@ -17,24 +17,34 @@ import {
 
 import {
   HeaderItemsWrapper,
+  GradientBackGround,
   StatFieldWrapper,
+  AbilitiesWrapper,
   PokemonNumberId,
   StatGraficValue,
   AbilityWrapper,
   PokemonImage,
+  InfoWrapper,
   StatWrapper,
+  AbilityName,
   PokemonName,
-  AbilityText,
+  TypeWrapper,
   StatGrafic,
+  InfoValue,
   StatValue,
+  InfoTitle,
   Container,
-  Abilities,
+  InfoLabel,
+  TypeText,
   StatName,
   DragIcon,
+  Divider,
   Lottie,
   styles,
   Header,
+  Types,
   Modal,
+  Info,
 } from './styles';
 
 interface PokemonProps {
@@ -45,6 +55,9 @@ interface PokemonProps {
       name: string,
     },
   }[];
+  species: {
+    name: string
+  };
   types: {
     slot: number;
     type: {
@@ -167,13 +180,13 @@ function PokemonDetails() {
                 </PokemonNumberId>
               </HeaderItemsWrapper>
               <HeaderItemsWrapper>
-                <Abilities>
+                <Types>
                   {pokemon?.types.map(({ type }, id: number) => (
-                    <AbilityWrapper key={`${id}-${type.name}`}>
-                      <AbilityText>{type.name}</AbilityText>
-                    </AbilityWrapper>
+                    <TypeWrapper key={`${id}-${type.name}`}>
+                      <TypeText>{type.name}</TypeText>
+                    </TypeWrapper>
                   ))}
-                </Abilities>
+                </Types>
                 <Lottie
                   source={require('~/assets/LottieJsonFiles/pokeball.json')}
                 />
@@ -209,7 +222,7 @@ function PokemonDetails() {
                     {
                       translateY: translateY.interpolate({
                         inputRange: [-100, 0, 100],
-                        outputRange: [!isModalFullyOpened ? -100 : 0, 0, isModalFullyOpened ? 100 : 0],
+                        outputRange: [!isModalFullyOpened ? -80 : 0, 0, isModalFullyOpened ? 100 : 0],
                         extrapolate: 'clamp',
                       }),
                     },
@@ -218,6 +231,8 @@ function PokemonDetails() {
                 isFullyOpened={isModalFullyOpened}
               >
                 <DragIcon />
+
+                <InfoTitle>Stats:</InfoTitle>
                 {pokemon?.stats.map((_stat, index: number) => (
                   <StatWrapper key={`${index}-${_stat.base_stat}`}>
                     <StatFieldWrapper flex={0.5}>
@@ -233,6 +248,7 @@ function PokemonDetails() {
                     </StatFieldWrapper>
                   </StatWrapper>
                 ))}
+
                 <StatWrapper>
                   <StatFieldWrapper flex={0.5}>
                     <StatName>total</StatName>
@@ -248,6 +264,35 @@ function PokemonDetails() {
                     </StatGrafic>
                   </StatFieldWrapper>
                 </StatWrapper>
+
+                <InfoTitle>Abilities:</InfoTitle>
+                <AbilitiesWrapper>
+                  {pokemon?.abilities.map(({ ability }, index: number) => (
+                    <GradientBackGround key={`${index}-${ability.name}`}>
+                      <AbilityWrapper>
+                        <AbilityName>{ability.name}</AbilityName>
+                      </AbilityWrapper>
+                    </GradientBackGround>
+                  ))}
+                </AbilitiesWrapper>
+
+                <InfoTitle>Info:</InfoTitle>
+                <InfoWrapper>
+                  <Info>
+                    <InfoValue>{pokemon?.species?.name}</InfoValue>
+                    <InfoLabel>Species</InfoLabel>
+                  </Info>
+                  <Divider />
+                  <Info>
+                    <InfoValue>{pokemon?.weight}</InfoValue>
+                    <InfoLabel>Weight</InfoLabel>
+                  </Info>
+                  <Divider />
+                  <Info>
+                    <InfoValue>{pokemon?.height}</InfoValue>
+                    <InfoLabel>Height</InfoLabel>
+                  </Info>
+                </InfoWrapper>
               </Modal>
             </PanGestureHandler>
           </>

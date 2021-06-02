@@ -1,5 +1,6 @@
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import LinearGradient from 'react-native-linear-gradient';
 import styled, { css } from 'styled-components/native';
 import FastImage from 'react-native-fast-image';
 import LottieView from 'lottie-react-native';
@@ -8,6 +9,7 @@ import {
   StyleSheet,
   Dimensions,
   Animated,
+  Platform,
 } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -70,7 +72,7 @@ export const PokemonNumberId = styled.Text`
   ${text};
 `;
 
-export const Abilities = styled.View`
+export const Types = styled.View`
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
@@ -78,14 +80,14 @@ export const Abilities = styled.View`
   margin: 8px 0;
 `;
 
-export const AbilityWrapper = styled.View`
+export const TypeWrapper = styled.View`
   background-color: #48cfaf;
   border-radius:  50px;
   margin: 8px 4px 0 0;
   padding: 6px 16px;
 `;
 
-export const AbilityText = styled.Text`
+export const TypeText = styled.Text`
   text-transform: capitalize;
   letter-spacing: 0.5px;
   font-size: 12px;
@@ -102,11 +104,11 @@ export const Lottie = styled(LottieView).attrs({
 `;
 
 export const Modal = styled(Animated.View) <ModalProps>`
-  height: ${props => (props.isFullyOpened ? `${height - 25}px` : '60%')};
-  border-top-right-radius: 42px;
-  border-top-left-radius: 42px;
-  background-color: #f6f6f8;
-  padding: 48px 26px 32px;
+  height: ${props => (props.isFullyOpened ? `${height - 205}px` : '62%')};
+  border-top-right-radius: 48px;
+  border-top-left-radius: 48px;
+  background-color: #f8f8f8;
+  padding: 38px 26px 32px;
   position: absolute;
   width: ${width}px;
   bottom: -80px;
@@ -131,7 +133,7 @@ export const StatWrapper = styled.View`
 `;
 
 export const StatGrafic = styled.View`
-  background-color: #d3d3d340;
+  background-color: #d3d3d360;
   border-radius: 8px;
   width: 100%;
   height: 6px;
@@ -166,9 +168,86 @@ export const StatValue = styled.Text`
 export const StatName = styled.Text`
   font-family: 'Ubuntu-Regular';
   text-transform: capitalize;
+  letter-spacing: 1px;
   font-size: 14px;
 `;
 
 export const StatFieldWrapper = styled.View<{ flex: number }>`
   flex: ${props => props.flex};
+`;
+
+export const AbilitiesWrapper = styled.View`
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+export const AbilityWrapper = styled.View`
+  border-bottom-right-radius: 90px;
+  border-top-left-radius: 90px;
+  justify-content:  center;
+  align-items: center;
+  margin-right: 8px;
+  height: 70px;
+  width: 110px;
+`;
+
+export const AbilityName = styled.Text`
+  font-family: 'Ubuntu-Medium';
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 10px;
+  color: #fefefe;
+`;
+
+export const InfoTitle = styled.Text`
+  font-family: 'Ubuntu-Bold';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 28px 0 8px;
+  font-size: 14px;
+  color: #0a3e25;
+`;
+
+export const InfoWrapper = styled.View`
+  flex-direction: row;
+`;
+
+export const InfoValue = styled.Text`
+  font-family: 'Ubuntu-Regular';
+  text-transform: capitalize;
+  margin-bottom: 2px;
+  font-size: 16px;
+  color: #13532d;
+`;
+
+export const InfoLabel = styled.Text`
+  font-family: 'Ubuntu-Light';
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin-top: 4px;
+  color: #13532d;
+`;
+
+export const Divider = styled.View`
+  background-color: #dee7e290;
+  height: 100%;
+  width: 1px;
+`;
+
+export const Info = styled.View`
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  flex: 1;
+`;
+
+export const GradientBackGround = styled(LinearGradient).attrs({
+  colors: Platform.OS === 'ios' ? ['#358856', '#28b862'] : ['#358856', '#28b862']
+})`
+  border-bottom-right-radius: 90px;
+  border-top-left-radius: 90px;
+
 `;
