@@ -106,6 +106,7 @@ export const Modal = styled(Animated.View) <ModalProps>`
   border-top-right-radius: 42px;
   border-top-left-radius: 42px;
   background-color: #f6f6f8;
+  padding: 48px 26px 32px;
   position: absolute;
   width: ${width}px;
   bottom: -80px;
@@ -117,6 +118,57 @@ export const DragIcon = styled(MaterialCommunityIcons).attrs({
   size: 32,
 })`
   position: absolute;
-  top: 0;
   align-self: center;
+  top: 0;
+`;
+
+export const StatWrapper = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12px;
+  width: 100%;
+`;
+
+export const StatGrafic = styled.View`
+  background-color: #d3d3d340;
+  border-radius: 8px;
+  width: 100%;
+  height: 6px;
+`;
+
+export const StatGraficValue = styled.View<{ value: number }>`
+  width: ${props => `${props.value}%`};
+  border-radius: 8px;
+  max-width: 100%;
+  height: 6px;
+
+  ${props => (props.value >= 0 && props.value < 40) && css`
+    background-color: #CC0000;
+  `}
+
+  ${props => (props.value >= 40 && props.value < 70) && css`
+    background-color: #B3A125;
+  `}
+
+  ${props => (props.value >= 70) && css`
+    background-color: #49857a;
+  `}
+`;
+
+export const StatValue = styled.Text`
+  font-family: 'Ubuntu-BoldItalic';
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 16px;
+`;
+
+export const StatName = styled.Text`
+  font-family: 'Ubuntu-Regular';
+  text-transform: capitalize;
+  font-size: 14px;
+`;
+
+export const StatFieldWrapper = styled.View<{ flex: number }>`
+  flex: ${props => props.flex};
 `;

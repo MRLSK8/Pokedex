@@ -17,13 +17,19 @@ import {
 
 import {
   HeaderItemsWrapper,
+  StatFieldWrapper,
   PokemonNumberId,
+  StatGraficValue,
   AbilityWrapper,
   PokemonImage,
+  StatWrapper,
   PokemonName,
   AbilityText,
+  StatGrafic,
+  StatValue,
   Container,
   Abilities,
+  StatName,
   DragIcon,
   Lottie,
   styles,
@@ -47,12 +53,12 @@ interface PokemonProps {
   }[];
   stats: {
     base_stat: number;
-    effort: number;
     stat: {
       name: string;
     }
   }[];
   weight: number;
+  height: number;
 }
 
 const MINIMUM_MODAL_TRANSLATION = 50;
@@ -212,7 +218,36 @@ function PokemonDetails() {
                 isFullyOpened={isModalFullyOpened}
               >
                 <DragIcon />
-
+                {pokemon?.stats.map((_stat, index: number) => (
+                  <StatWrapper key={`${index}-${_stat.base_stat}`}>
+                    <StatFieldWrapper flex={0.5}>
+                      <StatName>{_stat?.stat?.name.replace('special-', 'sp. ')}</StatName>
+                    </StatFieldWrapper>
+                    <StatFieldWrapper flex={0.5}>
+                      <StatValue>{_stat?.base_stat}</StatValue>
+                    </StatFieldWrapper>
+                    <StatFieldWrapper flex={1}>
+                      <StatGrafic>
+                        <StatGraficValue value={_stat?.base_stat} />
+                      </StatGrafic>
+                    </StatFieldWrapper>
+                  </StatWrapper>
+                ))}
+                <StatWrapper>
+                  <StatFieldWrapper flex={0.5}>
+                    <StatName>total</StatName>
+                  </StatFieldWrapper>
+                  <StatFieldWrapper flex={0.5}>
+                    <StatValue>
+                      {pokemon?.stats.reduce((_total, currentValue) => _total + currentValue.base_stat, 0)}
+                    </StatValue>
+                  </StatFieldWrapper>
+                  <StatFieldWrapper flex={1}>
+                    <StatGrafic>
+                      <StatGraficValue value={80} />
+                    </StatGrafic>
+                  </StatFieldWrapper>
+                </StatWrapper>
               </Modal>
             </PanGestureHandler>
           </>
