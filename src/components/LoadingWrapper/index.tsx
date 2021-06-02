@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import LottieView from 'lottie-react-native';
-import { View } from 'react-native';
+
 import { Container, AnimationWrapper } from './styles';
 
 interface LoadingWrapper {

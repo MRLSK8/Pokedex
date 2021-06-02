@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 
 import { usePokemonContext } from '~/hooks/pokemonContext';
-import { ActivityIndicator, View } from 'react-native';
+
 import {
   SafeAreaWrapper,
   LoadingWrapper,
@@ -12,6 +12,7 @@ import {
   GradientBackGround,
   LoadingIconField,
   GradientShadow,
+  LoadingIcon,
   PokemonList,
   Container,
 } from './styles';
@@ -28,7 +29,7 @@ const PokemonsList = () => {
 
     return (
       <LoadingIconField>
-        <ActivityIndicator size="large" color="#3c1a1a" />
+        <LoadingIcon />
       </LoadingIconField>
     );
   }, [isLoadingMorePokemons]);

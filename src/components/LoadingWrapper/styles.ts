@@ -1,17 +1,17 @@
-import styled from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  flex: 1;
+  background-color: #b9fdab;
   justify-content: center;
   align-items: center;
-  background-color: #b9fdab;
+  flex: 1;
 `;
 
 export const AnimationWrapper = styled(Animatable.View).attrs({
+  useNativeDriver: true,
   animation: "bounce",
   duration: 2000,
-  useNativeDriver: true,
 })`
   width: 100%;
   height: 100%;

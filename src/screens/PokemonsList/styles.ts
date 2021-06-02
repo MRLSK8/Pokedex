@@ -1,6 +1,6 @@
+import { Platform, ActivityIndicator } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components/native';
-import { Platform } from 'react-native';
 
 export const Container = styled.View`
   width: 100%;
@@ -40,3 +40,8 @@ export const GradientShadow = styled(LinearGradient).attrs({
   bottom: -25px;
   z-index: 3;
 `;
+
+export const LoadingIcon = styled(ActivityIndicator).attrs({
+  size: "large",
+  color: "#3c1a1a",
+})``;

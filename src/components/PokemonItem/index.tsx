@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
-import { View } from 'react-native';
+
+import { showErrorAlert } from '~/utils';
 
 import {
   PokemonImageBackground,
@@ -24,7 +25,11 @@ const PokemonItem = ({ id, name, image }: PokemonItemProps) => {
   const { navigate } = useNavigation();
 
   const handleGoToDetails = (id: number) => {
-    navigate('PokemonDetails', { id });
+    if (id) {
+      navigate('PokemonDetails', { id });
+    } else {
+      showErrorAlert('Pokemon Id not found!');
+    }
   };
 
   return (

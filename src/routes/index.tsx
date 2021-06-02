@@ -44,9 +44,9 @@ const Routes: React.FC = () => {
         options={{
           title: '',
           headerShown: true,
-          headerTransparent: true,
           headerStyle: {
             elevation: 0,
+            backgroundColor: '#b9fdab',
           },
           headerLeft: () => <GoBackButton />,
         }}
