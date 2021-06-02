@@ -46,6 +46,7 @@ export const PokemonNumber = styled.Text`
   letter-spacing:  1px;
   font-size: 16px;
   margin-top: 2px;
+  color: #49857a80;
 `;
 
 export const PokeballIcon = styled(MaterialCommunityIcons).attrs({
