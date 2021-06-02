@@ -33,11 +33,11 @@ Project developed for the purpose of...
 :white_check_mark: Lottie\
 :white_check_mark: Git-commit-msg-linter\
 :white_check_mark: React-native-animatable\
-:white_check_mark: React Hooks
+:white_check_mark: React Hooks\
 :white_check_mark: Babel-plugin-root-import\
 :white_check_mark: Vector Icons\
 :white_check_mark: Animated\
-:white_check_mark: Typescript\
+:white_check_mark: Typescript
 
 
 ## Prerequisites
