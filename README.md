@@ -53,23 +53,39 @@ Before proceeding, it is ideal that you have the environment set up to create ap
 
 ## Getting started
 
+#### First you clone the project:
+
 ```bash
-First you clone the project:
-
 $ git clone https://github.com/MRLSK8/Pokedex.git && cd Pokedex
+```
 
-Then you run the following command to install packages:
+#### Then you run the following command to install packages:
 
+```bash
 $ yarn install
+```
 
-Next, you start the project:
+#### Next, you start the project:
 
+```bash
 $ yarn start
+```
 
-Finally you run it like so:
+#### Finally you run it like so:
 
+```bash
 $ yarn android
 ```
+
+#### If you want to build it and generate an APK just do the following
+
+```bash
+$ yarn android:build
+```
+
+#### It will generate an APK on android/app/build/outputs/apk/app-release.apk, copy into your cellphone and install it.
+#### And that's it!
+
 
 ## File structure
 
