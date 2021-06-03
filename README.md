@@ -23,7 +23,7 @@ Pokedex developed with React Native, consuming the public API: [Pokeapi](https:/
 
 Objective:
 - Consume the endpoint https://pokeapi.co/api/v2/pokemon/ and create a screen with a list of pokemons using pagination.
-- Consume the endpoint https://pokeapi.co/api/v2/pokemon/{id or name}/ and create pokemon details screen.
+- Consume the endpoint https://pokeapi.co/api/v2/pokemon/{id or name}/ and create a pokemon details screen.
 
 ## Technologies
 
