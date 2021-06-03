@@ -1,5 +1,5 @@
 <h1 align="center">
-  Pokedex
+  Pokédex
 </h1>
 
 ## Table of contents:
