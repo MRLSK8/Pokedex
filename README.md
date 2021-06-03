@@ -15,7 +15,8 @@
 ## About the project:
 
 <div>
-  <img src="----" width="200" height="400"/>
+  <img src="assets/images/pokemon-list.gif" width="200" height="400"/>
+  <img src="assets/images/pokemon-details.gif" width="200" height="400"/>
 </div>
 
 Pokedex developed with React Native, consuming the public API: [Pokeapi](https://pokeapi.co/docs/v2).
