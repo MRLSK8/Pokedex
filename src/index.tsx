@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
-import './config/statusBarConfig';
+import './config/StatusBarConfig';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { SWRConfig } from 'swr';
