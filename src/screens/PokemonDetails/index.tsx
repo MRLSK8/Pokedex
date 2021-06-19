@@ -74,7 +74,7 @@ interface PokemonProps {
   height: number;
 }
 
-const MINIMUM_MODAL_TRANSLATION = 50;
+const MINIMUM_MODAL_TRANSLATION_TO_ACTION = 80;
 
 function PokemonDetails() {
   const id = useRoute<any>()?.params?.id;
@@ -113,18 +113,19 @@ function PokemonDetails() {
   const onHandlerStateChange = useCallback(({ nativeEvent }: any) => {
     if (nativeEvent.state === State.END) {
       const { translationY } = nativeEvent;
-      let opened = false;
+      let modalClosed = false;
       animatedOffset += translationY;
 
       if (translationY > 0 && !isModalFullyOpened) return;
 
       if (translationY < 0 && isModalFullyOpened) return;
 
-
-      if (translationY >= MINIMUM_MODAL_TRANSLATION) {
+      if (translationY >= MINIMUM_MODAL_TRANSLATION_TO_ACTION) {
         setIsModalFullyOpened(false);
-        opened = true;
-      } else {
+        modalClosed = true;
+      }
+
+      if (translationY < -MINIMUM_MODAL_TRANSLATION_TO_ACTION) {
         setIsModalFullyOpened(true);
         translateY.setValue(animatedOffset);
         translateY.setOffset(0);
@@ -132,11 +133,11 @@ function PokemonDetails() {
       }
 
       Animated.timing(translateY, {
-        toValue: opened ? 60 : 0,
+        toValue: modalClosed ? 100 : 0,
         duration: 200,
         useNativeDriver: true,
       }).start(() => {
-        animatedOffset = opened ? 60 : 0;
+        animatedOffset = modalClosed ? 100 : 0;
         translateY.setOffset(animatedOffset);
         translateY.setValue(0);
       });

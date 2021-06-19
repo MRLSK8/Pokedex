@@ -104,7 +104,7 @@ export const Lottie = styled(LottieView).attrs({
 `;
 
 export const Modal = styled(Animated.View) <ModalProps>`
-  height: ${props => (props.isFullyOpened ? `${height - 205}px` : '62%')};
+  height: ${props => (props.isFullyOpened ? `${height - 205}px` : '65%')};
   border-top-right-radius: 48px;
   border-top-left-radius: 48px;
   background-color: #f8f8f8;
