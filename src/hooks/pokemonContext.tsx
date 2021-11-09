@@ -66,7 +66,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
       setPokemons(prevState => [...prevState, ...pokemonsDataFormatted]);
       setCurrentOffset(prevState => prevState + LIMIT_OF_POKEMONS_AT_A_TIME);
     } catch (error) {
-      throw new (error);
+      throw new Error('Error ao buscar pokemons...');
     } finally {
       setIsLoadingMorePokemons(false);
     }
@@ -79,7 +79,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
   );
 };
 
-const usePokemonContext = (): any => {
+const usePokemonContext = (): PokemonContextProps => {
   const context = useContext(PokemonContext);
 
   if (!context) {
