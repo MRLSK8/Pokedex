@@ -90,6 +90,15 @@ $ yarn android:build
 #### It will generate an APK on android/app/build/outputs/apk/app-release.apk, copy into your cellphone and install it.
 #### And that's it!
 
+## Running Tests
+#### You just need to run this command:
+```bash
+  $ yarn test
+```
+#### In order to check the tests coverage run this command:
+```bash
+  $ yarn test:coverage
+```
 
 ## File structure
 
