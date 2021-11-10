@@ -47,7 +47,7 @@ Objective:
 :white_check_mark: Jest\
 :white_check_mark: @testing-library/jest-native\
 :white_check_mark: @testing-library/react-hooks\
-:white_check_mark: @testing-library/react-native\
+:white_check_mark: @testing-library/react-native
 
 ## Prerequisites
 
