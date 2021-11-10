@@ -95,7 +95,7 @@ $ yarn android:build
 ```bash
   $ yarn test
 ```
-#### In order to check the tests coverage run this command:
+#### In order to check the tests coverage out, run this command instead:
 ```bash
   $ yarn test:coverage
 ```
