@@ -8,14 +8,13 @@ const Providers: React.FC = ({ children }) => (
   </PokemonContextProvider>
 );
 
-
 describe('Pokedex context', () => {
   it('should fetch 10 pokemons', async () => {
     const { result } = renderHook(() => usePokemonContext(), { wrapper: Providers });
 
     await act(() => result.current.fetchPokemons());
 
-    expect(result.current.pokemons.length).toBe(10);
+    expect(result.current.pokemons).toHaveLength(10);
   });
 
   it('should fetch 20 pokemons', async () => {
@@ -25,6 +24,6 @@ describe('Pokedex context', () => {
 
     await act(() => result.current.fetchPokemons());
 
-    expect(result.current.pokemons.length).toBe(20);
+    expect(result.current.pokemons).toHaveLength(20);
   });
 });
