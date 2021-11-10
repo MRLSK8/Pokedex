@@ -43,7 +43,7 @@ Objective:
 :white_check_mark: Vector Icons\
 :white_check_mark: react-native-fast-image\
 :white_check_mark: Animated\
-:white_check_mark: Typescript
+:white_check_mark: Typescript\
 :white_check_mark: Jest\
 :white_check_mark: @testing-library/jest-native\
 :white_check_mark: @testing-library/react-hooks\
